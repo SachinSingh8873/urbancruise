@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { Phone, MessageCircle, Mail, Facebook, Twitter, Linkedin, Youtube, Instagram, Users, Clock, Shield, Star, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
-import Second from "./second";
-import Navbar from "./Navbar"; 
-import First from "./First"; 
-import Location from "./Location"; 
+import Second from "./second.jsx";
+import Navbar from "./navbar.jsx"; 
+import First from "./first.jsx"; 
+import Location from "./Location.jsx"; 
 // import { WOW } from "wowjs";
 import "animate.css/animate.min.css";
 import Head from 'next/head';
