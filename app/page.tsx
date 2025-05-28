@@ -6,7 +6,7 @@ import Image from "next/image";
 import Second from "./second.jsx";
 import Navbar from "./navbar.jsx"; 
 import First from "./first.jsx"; 
-import Location from "./Location.jsx"; 
+import Location from "./Location"; 
 // import { WOW } from "wowjs";
 import "animate.css/animate.min.css";
 import Head from 'next/head';
