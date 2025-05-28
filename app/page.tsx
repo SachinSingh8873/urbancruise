@@ -10,6 +10,7 @@ import Location from "./Location";
 // import { WOW } from "wowjs";
 import "animate.css/animate.min.css";
 import Head from 'next/head';
+import './globals.css';
 
 
 

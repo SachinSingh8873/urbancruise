@@ -10,14 +10,39 @@ import {
   Instagram,
   ChevronDown,
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 function First() {
+
+   const [bgImage, setBgImage] = useState("/images/hero-bg.jpg");
+   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+        setBgImage("/images/smallbg.webp");
+      } else {
+        setIsMobile(false);
+        setBgImage("/images/hero-bg.jpg"); 
+      }
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+
   return (
-    <div className="w-full h-full">      {/* Background Image */}
+    <div className="w-full h-full">   
 <section
-  className="relative min-h-screen bg-cover bg-center bg-no-repeat ]"
-  style={{backgroundImage: "url('/images/hero-bg.jpg')"}}
+  className="slider-container relative min-h-screen bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out animate-slide"
+  style={{ backgroundImage: `url(${bgImage})` }}
 >
+
         <div className="absolute inset-0 bg-black bg-opacity-0"></div>
 
         {/* Social Media Icons */}
@@ -56,7 +81,7 @@ function First() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-10 px-4 py-20">
+        <div className="relative z-10 max-w-7xl mx-10 px-4 py-20" hidden={isMobile}>
   <div className="text-left mb-16 max-w-2xl">
     {/* Main Heading */}
     <h1
